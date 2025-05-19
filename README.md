@@ -1,5 +1,6 @@
 # ATM
 
+
 from random import randint
 
 atm_users = {}
@@ -88,6 +89,9 @@ def register_user():
     }
 
     print(f"User registered successfully! Your ATM ID is {user_id}")
+
+    with open('atm.txt','a') as f:
+        f.writelines([str(user_id),'\t\t\t',name,'\t\t\t',pin,'\t\t\t',str(balance),'\t\t\t',initial_deposit,'\n'])
 
 def display_users():
     print("=== Registered Users ===")
